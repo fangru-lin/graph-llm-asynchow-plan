@@ -1,0 +1,27 @@
+{
+    "gpt35": {
+        "organization": "your-org",
+        "name":"gpt-3.5-turbo",
+        "key":"your-key"
+    },
+    "gpt4": {
+        "organization": "your-org",
+        "name":"gpt-4",
+        "key":"your-key"
+    },
+    "llama": {
+        "organization": "meta-huggingface",
+        "name":"llama2",
+        "key":"your-key"
+    },
+    "llamacode": {
+        "organization": "meta-huggingface",
+        "name":"llamacode",
+        "key":"your-key"
+    },
+    "llamacodeinstruct": {
+        "organization": "meta-huggingface",
+        "name":"llamacodeinstruct",
+        "key":"your-key"
+    }
+}

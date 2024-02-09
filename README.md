@@ -1,5 +1,11 @@
 # graph-llm-asynchow-plan
 
-Code and dataset repo for paper [Graph-enhanced Large Language Models in Asynchronous Plan Reasoning](https://fangru-lin.github.io/assets/pdf/Graph_enhanced_Large_Language_Models_in_Asynchronous_Plan_Reasoning.pdf).
+Code and dataset repo for paper [Graph-enhanced Large Language Models in Asynchronous Plan Reasoning](https://arxiv.org/abs/2402.02805).
 
-Code and data will come in one day or so! So please watch out :)
+Naturalistic datasets used in the paper is in the folder ```data```.
+
+You can use the code to generate naturalistic data in folder ```data_gen```
+
+The code for the benchmarking experiment is in folder ```benchmark_llm```
+
+The code and data for prototypical experiment can be found in ```prototypical```

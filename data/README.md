@@ -1,0 +1,2 @@
+Naturalistic datasets are too big. We removed full-scaled prompts in these datasets for anonymous repo review. We will publish the full dataset upon publication.
+You can generate prompts using ```generate_graph_prompt.py``` in ```data_gen``` folder

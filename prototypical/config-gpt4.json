@@ -1,0 +1,8 @@
+{
+    "gpt4": {
+        "api_type": "azure",
+        "api_base": "https://gpt4-msoft-sponsorship.openai.azure.com/",
+        "api_version": "2023-07-01-preview",
+        "key": "your-key"
+    }
+}

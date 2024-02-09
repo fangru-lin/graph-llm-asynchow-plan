@@ -1,0 +1,25 @@
+<cot-edges>
+The following lists of nodes @nodes@ and edges @edges@ define a directed acyclic graph. 
+Each element in the list of edges is expressed in the form (i,j,w), 
+and specifies that node i connects to node j with weight w.
+What is the length of the longest path from node @i@ to node @j@?
+Think step by step and then reply with the numerical value of the 
+shortest path enclosed by <result></result> tags.
+</cot-edges>
+
+<cot-adj>
+The following lists of nodes @nodes@ and the adjacency matrix @adj@ define a directed acyclic graph. 
+Each element (i,j) in the adjacency matrix specifies that node i connects to node j with weight w.
+What is the length of the longest path from node @i@ to node @j@?
+Think step by step and then reply with the numerical value of the 
+shortest path enclosed by <result></result> tags.
+</cot-adj>
+
+<cot-adj-list>
+The following lists of nodes @nodes@ and the adjacency list @adj@ define a directed acyclic graph. 
+The adjacency list is a vocabulary that for each node i specifies a list of tuples (j,w) where
+node i connects to node j with weight w.
+What is the length of the longest path from node @i@ to node @j@?
+Think step by step and then reply with the numerical value of the 
+shortest path enclosed by <result></result> tags.
+</cot-adj-list>
