@@ -1,6 +1,6 @@
 # graph-llm-asynchow-plan
 
-Code and dataset repo for paper [Graph-enhanced Large Language Models in Asynchronous Plan Reasoning](https://arxiv.org/abs/2402.02805).
+Code and dataset repo for ICML-2024 paper [Graph-enhanced Large Language Models in Asynchronous Plan Reasoning](https://arxiv.org/abs/2402.02805).
 
 Naturalistic datasets used in the paper is in the folder ```data```.
 
