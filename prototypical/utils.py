@@ -66,7 +66,7 @@ def querygpt4local(prompt, jdata):
     openai.api_version = jdata['api_version']
     openai.api_key = jdata['key']
 
-    message_text = [{"role":"system","content":"You are an AI assistant that helps people find information."}, \
+    message_text = [{"role":"system","content":""}, \
                     {"role":"user","content": prompt}]
 
     completion = openai.ChatCompletion.create(
