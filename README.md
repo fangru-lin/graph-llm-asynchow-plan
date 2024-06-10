@@ -9,3 +9,14 @@ You can use the code to generate naturalistic data in folder ```data_gen```
 The code for the benchmarking experiment is in folder ```benchmark_llm```
 
 The code and data for prototypical experiment can be found in ```prototypical```
+
+If you find this repo useful, please cite our paper as
+
+```
+@article{lin2024graph,
+  title={Graph-enhanced Large Language Models in Asynchronous Plan Reasoning},
+  author={Lin, Fangru and La Malfa, Emanuele and Hofmann, Valentin and Yang, Elle Michelle and Cohn, Anthony and Pierrehumbert, Janet B},
+  journal={arXiv preprint arXiv:2402.02805},
+  year={2024}
+}
+```
