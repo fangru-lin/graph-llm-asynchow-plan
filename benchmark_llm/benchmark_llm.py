@@ -647,7 +647,7 @@ async def main():
         res_dic = dict()
         nshot_idx = benchmark_dic['nshot_instructions']['idxs']
         random.seed(0)
-        sampled_idxs = random.sample([_ for _ in range(len(benchmark_dic['titles']) if _ not in nshot_idx)], 100)
+        sampled_idxs = random.sample([_ for _ in range(len(benchmark_dic['titles'])) if _ not in nshot_idx], 100)
         nshot_template_dic = benchmark_dic['nshot_instructions']
         response_dic = await prompt_model_graph(model_name=args.model_name,
                                                 benchmark_dic=benchmark_dic,
