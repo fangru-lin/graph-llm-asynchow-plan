@@ -478,7 +478,7 @@ def generate_nshot_prompt_bag(benchmark_dic,
             nshot_instr: n-shot instruction
 
     '''
-    prompts = [benchmark_dic['prompts'][best_template][f'bag_cot{combined}_prompts'][best_graph][i] for i in nshot_idx]
+    prompts = [benchmark_dic['prompts'][best_template][f'bag_cot{combined}_prompts'][i] for i in nshot_idx]
     nshot_instr = instruction['few_shot_cot']
     for i in range(len(prompts)):
         nshot_instr = nshot_instr.replace(f'[PROMPT{i}]',prompts[i])
