@@ -10,11 +10,10 @@ import pickle
 from copy import deepcopy
 from openai import AsyncAzureOpenAI
 import asyncio
-from utils.utils import *
+from utils import *
 import argparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import os
-from cohere import AsyncClient
 from huggingface_hub import InferenceClient
 
 
@@ -291,6 +290,9 @@ def measure_perf(response,
         "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
         "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty",
         "ninety", "hundred", "thousand", "million", "half"])
+    if not response:
+        return [timedelta(), timedelta()], False
+    potential_answers = list()
     try:
         # if a model follows instruction
         # answer should be in double quotes, and either the first or the last one is the answer
@@ -308,7 +310,10 @@ def measure_perf(response,
     except Exception as e:
         # if a model does not follow instruction
         # try to get response after 'is'
-        answer = response.split('is ')[-1].lower()
+        try:
+            answer = response.split('is ')[-1].lower()
+        except:
+            answer = response.lower()
         if re.findall(r'\b\w+ and a half', answer):
             pattern = re.findall(r'\b\w+ and a half', answer)[0]
             prec_word = re.findall(r'\b\w+', pattern)[0]
@@ -318,6 +323,9 @@ def measure_perf(response,
             answer = answer.replace('half a ', '0.5')
             answer = text_to_number_updated(answer)[0].replace(' and half', '.5')
             potential_answers = [answer]
+
+    if not potential_answers:
+        return [timedelta(), timedelta()], False
     for answer in potential_answers:
         if '=' in answer:
             answer = answer.split('=')[-1]
@@ -360,7 +368,7 @@ def measure_perf(response,
             continue
         if gold_timedelta[0] <= timedelta_ans[1] <= gold_timedelta[1]:
             return timedelta_ans, True
-        return timedelta_ans, False
+        # return timedelta_ans, False
 
     return [timedelta(), timedelta()], False
 
@@ -479,7 +487,7 @@ def generate_nshot_prompt_bag(benchmark_dic,
 
     '''
     prompts = [benchmark_dic['prompts'][best_template][f'bag_cot{combined}_prompts'][i] for i in nshot_idx]
-    nshot_instr = instruction['few_shot_cot']
+    nshot_instr = instruction[best_graph]['few_shot_cot']
     for i in range(len(prompts)):
         nshot_instr = nshot_instr.replace(f'[PROMPT{i}]',prompts[i])
     
@@ -699,7 +707,7 @@ async def main():
         response_dic = await prompt_model_graph_full_res(model_name=args.model_name,
                                                             benchmark_dic=benchmark_dic,
                                                             nshot_idx=benchmark_dic['nshot_instructions']['idxs'],
-                                                            nshot_template_dic=benchmark_dic['nshot_instructions'],
+                                                            nshot_template_dic=benchmark_dic['bag_instruction']['templates'],
                                                             best_prompt=args.best_prompt_template,
                                                             cot=False,
                                                             nshot=True,
