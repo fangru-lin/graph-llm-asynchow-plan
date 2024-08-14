@@ -14,10 +14,9 @@ The code and data for prototypical experiment can be found in ```prototypical```
 If you find this repo useful, please cite our paper as
 
 ```
-@article{lin2024graph,
+@inproceedings{lingraph,
   title={Graph-enhanced Large Language Models in Asynchronous Plan Reasoning},
-  author={Lin, Fangru and La Malfa, Emanuele and Hofmann, Valentin and Yang, Elle Michelle and Cohn, Anthony and Pierrehumbert, Janet B},
-  journal={arXiv preprint arXiv:2402.02805},
-  year={2024}
+  author={Lin, Fangru and La Malfa, Emanuele and Hofmann, Valentin and Yang, Elle Michelle and Cohn, Anthony G and Pierrehumbert, Janet B},
+  booktitle={Forty-first International Conference on Machine Learning}
 }
 ```
