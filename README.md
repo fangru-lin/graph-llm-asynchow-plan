@@ -10,6 +10,8 @@ The code for the benchmarking experiment is in folder ```benchmark_llm```
 
 The code and data for prototypical experiment can be found in ```prototypical```
 
+You can also see a quick preview of our recent train/test-split version of this dataset on [huggingface](https://huggingface.co/datasets/fangrulin/asynchow).
+
 ## Cite our paper
 If you find this repo useful, please cite our paper as
 
